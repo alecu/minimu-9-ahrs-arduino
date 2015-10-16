@@ -67,12 +67,12 @@ int SENSOR_SIGN[9] = {1,1,1,-1,-1,-1,1,1,1}; //Correct directions x,y,z - gyro, 
 
 // LSM303 magnetometer calibration constants; use the Calibrate example from
 // the Pololu LSM303 library to find the right values for your board
-#define M_X_MIN -421
-#define M_Y_MIN -639
-#define M_Z_MIN -238
-#define M_X_MAX 424
-#define M_Y_MAX 295
-#define M_Z_MAX 472
+#define M_X_MIN -235
+#define M_Y_MIN -240
+#define M_Z_MIN -182
+#define M_X_MAX 149
+#define M_Y_MAX 171
+#define M_Z_MAX 211
 
 #define Kp_ROLLPITCH 0.02
 #define Ki_ROLLPITCH 0.00002
@@ -154,6 +154,8 @@ void setup()
 { 
   Serial.begin(115200);
   pinMode (STATUS_LED,OUTPUT);  // Status LED
+  pinMode(7, INPUT_PULLUP);
+  pinMode(13, OUTPUT);
   
   I2C_Init();
 

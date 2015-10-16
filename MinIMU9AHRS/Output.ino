@@ -60,6 +60,10 @@ void printdata(void)
       Serial.print (",");
       Serial.print(c_magnetom_z);
       #endif
+      int pushbutton = 1 - digitalRead(7);
+      Serial.print(",");
+      Serial.print(pushbutton);
+      digitalWrite(13, pushbutton);
       /*#if PRINT_DCM == 1
       Serial.print (",DCM:");
       Serial.print(convert_to_dec(DCM_Matrix[0][0]));
